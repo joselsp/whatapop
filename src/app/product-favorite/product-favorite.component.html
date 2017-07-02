@@ -1,0 +1,7 @@
+<p>
+  <button class="btnd fa fa-3x fa-star"
+  (click)= "favoriteButtonClick()" [ngClass]="{
+        'favOn': isFav() === true,
+        'favOff': isFav() === false,
+        'favOff': isFav() === null}"></button>
+</p>

@@ -1,0 +1,38 @@
+<div>
+  <div class="row">
+    <div class="small-6 medium-2 large-3 columns">
+      <label for="name">Texto a buscar</label>
+      <input [(ngModel)]="productFilter.text" id="name" type="text" placeholder="Pe. Uncharted">
+      <label for="minPrice">Precio Minimo</label>
+      <input [(ngModel)]="productFilter.minPrice" id="minPrice" type="text">      
+    </div>
+    <div class="small-6 medium-2 large-3 columns">
+      <label for="category">Categoría</label>
+      <select [(ngModel)]="productFilter.category" id="category">
+        <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+      </select>
+      <label for="maxPrice">Precio Maximo</label>
+      <input [(ngModel)]="productFilter.maxPrice" id="maxPrice" type="text">
+    </div>
+    <div class="small-6 medium-2 large-3 columns"> 
+      <label for="state">Estado</label>
+     <select [(ngModel)]="productFilter.state" id="state">
+        <option value="" selected></option>
+        <option value="selling">En venta</option>
+        <option value="sold">Vendido</option>
+      </select>
+      <label for="order">Tipo de ordenación</label>
+      <select [(ngModel)]="productOrder.sortType" id="order">
+        <option value="" selected></option>
+        <option value="priceAsc">Ordenar por Precio - Ascendente</option>
+        <option value="priceDesc">Ordenar por Precio - Descendente</option>
+        <option value="alpAsc">Ordenar Alfabéticamente - Ascendente</option>
+        <option value="alpDesc">Ordenar Alfabéticamente - Descendente</option>
+      </select>
+    </div>
+
+    <div class="small-12 medium-3 large-2 columns">
+      <button (click)="notifyHost()" class="button expanded">Buscar</button>
+    </div>
+  </div>
+</div>
